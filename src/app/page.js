@@ -1,4 +1,7 @@
 import Image from "next/image";
+import axios from "axios"
+
+axios.defaults.baseURL = "htttp://localhost:3000"
 
 export default function Home() {
   return (
