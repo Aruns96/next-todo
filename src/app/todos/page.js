@@ -19,6 +19,10 @@ const Todos = () => {
    const addHandler =  async()=>{
        console.log(input)
        const response = await axios.post("/api/todos",{task:input})
+       if(response.status){
+        setInput("")
+        location.reload()
+       }
        console.log(response)
    }
   return (
@@ -41,7 +45,7 @@ const Todos = () => {
                     <input type="checkbox" />
 
                     <div className="font-bold text-xl">{todo.task}</div>
-                  
+                    <button className="text-sm shadow-sm rounded-md bg-green-500 text-white p-1">Edit</button>
                     <button className="text-sm shadow-sm rounded-md bg-red-500 text-white p-1">Delete</button>
                     
               </div>
