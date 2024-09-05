@@ -68,6 +68,7 @@ const Todos = () => {
           placeholder="Enter todo"
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          required
         />
         <button onClick={addHandler} className="text-xl shadow-md rounded-md bg-blue-500 text-white p-3 ">Add</button>
       </div>
