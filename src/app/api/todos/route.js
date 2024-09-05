@@ -35,6 +35,26 @@ export async function POST (req){
       console.log(error)
     }
 }
+export async function PUT (req){
+    try{
+       
+           const body = await req.json()
+          
+           const {task,completed} = body
+           console.log("body",task)
+           const newTodo = new Todo({
+               task:task,
+               completed:completed
+           })
+           const savedTodo = await newTodo.save()
+           return NextResponse.json({message:"success",data:savedTodo},{status:201})
+   
+      
+
+    }catch(error){
+      console.log(error)
+    }
+}
 
 
 
